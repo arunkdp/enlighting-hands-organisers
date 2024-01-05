@@ -88,6 +88,7 @@ function App() {
   return (
     <div style={{ padding: "30px" }}>
       <div>
+        <div>
         <label>Place: </label>
         <Select
           style={{
@@ -97,17 +98,20 @@ function App() {
           onChange={handlePlaceChange}
           options={filteredPlacesList}
         />
-        <label>Organiser: </label>
+        </div>
+        <div style={{marginTop: "10px" }}>
+        <label >Organiser: </label>
         <Select
           mode="multiple"
           allowClear
-          style={{ width: '100%', marginTop: "20px" }}
+          style={{ width: '100%'}}
           placeholder="Please select"
           value={selectedorganiserIds}
           // defaultValue={['a10', 'c12']}
           onChange={(e, data) => handleOrganiserChange(e, data)}
           options={organiserList}
         />
+        </div>
         <div style={{ marginTop: "20px" }}>
           <Button onClick={(e) => handleSubmit(e)}>Add</Button>
 
