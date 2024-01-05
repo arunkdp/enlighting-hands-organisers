@@ -1,0 +1,39 @@
+[
+    {
+        "value":1,
+        "label":"Oorani",
+        "disabled":false
+    },
+    {
+        "value":2,
+        "label":"Villiseri",
+        "disabled":false
+    },
+    {
+        "value":3,
+        "label":"Illayarasanenthal",
+        "disabled":false
+    },
+    {
+        "value":4,
+        "label":"Erachi",
+        "disabled":false
+    },
+    {
+        "value":5,
+        "label":"Sriram nagar",
+        "disabled":false
+
+    },
+    {
+        "value":6,
+        "label":"Keelaeral",
+        "disabled":false
+
+    },
+    {
+        "value":7,
+        "label":"Kadalauyur",
+        "disabled":false
+    }
+]
