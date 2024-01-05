@@ -97,7 +97,7 @@ function App() {
           onChange={handlePlaceChange}
           options={filteredPlacesList}
         />
-
+        <label>Organiser: </label>
         <Select
           mode="multiple"
           allowClear
