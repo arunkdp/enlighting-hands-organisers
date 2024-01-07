@@ -11,26 +11,6 @@ function App() {
   const [filteredPlacesList, setFilteredPlacesList] = useState(places)
   const [assignedList, setAssignedList] = useState([])
 
-  const handlePlaceChange = (e, data, inx) => {
-
-    let temp = [...filteredPlacesList]
-    const selectedIndex = temp.findIndex(obj => obj.value == e);
-
-    let updatedPlaces = temp.map((item, index) => {
-      if (index === inx && index == selectedIndex) {
-        return {
-          ...item,
-          selectedPlace: e,
-          disabled: item.value == e,
-        };
-      }
-      return item
-    });
-
-    setFilteredPlacesList(updatedPlaces)
-
-  };
-
   const handleOrganiserChange = (e, item, inx) => {
 
     let temp = [...filteredPlacesList]
@@ -76,28 +56,25 @@ function App() {
     }
   };
 
+  const handleReset = () => {
+    setFilteredPlacesList(places)
+  }
+
   return (
     <div style={{ padding: "30px" }}>
       <div >
+
         <div >
           {filteredPlacesList.map((data, inx) => {
             return <div key={inx} style={{ marginRight: "10px", display: "flex" }}>
               <div style={{ marginLeft: "10px", marginTop: "10px" }}>
-                <Select
-                  style={{
-                    width: 200,
-                  }}
-                  value={data?.value}
-                  onChange={(e) => handlePlaceChange(e, data, inx)}
-                  options={filteredPlacesList}
-                  disabled={true}
-                />
+                <span>{data?.label}</span>
               </div>
               <div style={{ marginLeft: "10px", marginTop: "10px" }}>
                 <Select
                   mode="multiple"
                   // allowClear
-                  style={{ width: 400 }}
+                  style={{ width: 200 }}
                   placeholder="Please select Organiser Name"
                   value={data?.selectedOrganiser}
                   onChange={(e, data) => handleOrganiserChange(e, data, inx)}
@@ -108,9 +85,9 @@ function App() {
           })}
         </div>
 
-        <div style={{ marginTop: "20px" }}>
-          <Button onClick={(e) => handleSubmit(e)}>Add</Button>
-
+        <div style={{ marginTop: "20px",display:"flex" }}>
+          <Button style={{marginRight:"10px"}}onClick={(e) => handleSubmit(e)}>Generate</Button>
+          <Button onClick={(e) => handleReset(e)} >Reset</Button>
         </div>
       </div>
       <div>
@@ -119,25 +96,23 @@ function App() {
           <Button onClick={handleCopyToClipboard} style={{ marginLeft: "10px" }}>Copy </Button>
         </div>
         {
-          assignedList.map((data) => {
-            console.log("datas", data);
-            return (
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ marginRight: '10px' }}>{data.label}</div>
-                <div style={{ marginTop: "10px" }}>
-                  {data?.selectedOrganiserName.length > 0 ? (
-                    <div style={{ marginLeft: "10px", marginTop: "10px" }}>
-                      {data?.selectedOrganiserName?.map((item) => (
-                        <div>-{item.label}</div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div style={{ marginLeft: "10px", marginTop: "10px" }}>-Not Allocated</div>
-                  )}
+          assignedList
+            .filter((data) => data.selectedOrganiserName.length > 0)
+            .map((data) => {
+              return (
+                <div style={{ display: "flex", alignItems: "center", marginTop: "10px" }} key={data.label}>
+                  <div >{data.label}<span> - </span></div>
+                  <div >
+                    {data.selectedOrganiserName.map((item, index, array) => (
+                      <span key={item.label}>
+                        {item.label}
+                        {index < array.length - 1 ? ", " : ""}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            );
-          })
+              );
+            })
         }
 
       </div>

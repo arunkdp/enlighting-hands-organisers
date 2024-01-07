@@ -1,30 +1,30 @@
 [
     {
         "value": 1,
-        "label": "Kasthuri",
+        "label": "Shiva Bala",
         "disabled":false
     },
     {
         "value": 2,
-        "label": "Meenakshithangam",
+        "label": "Anand",
         "disabled":false
 
     },
     {
         "value": 3,
-        "label": "Meena",
+        "label": "Anitha",
         "disabled":false
 
     },
     {
         "value": 4,
-        "label": "Valiyammal",
+        "label": "Kani",
         "disabled":false
 
     },
     {
         "value": 5,
-        "label": "Anitha",
+        "label": "Kasthuri Hari",
         "disabled":false
     },
     {
@@ -34,37 +34,42 @@
     },
     {
         "value": 7,
-        "label": "Subashini",
-        "disabled":false
-    },
-    {
-        "value": 8,
-        "label": "Chandra",
-        "disabled":false
-    },
-    {
-        "value": 9,
-        "label": "Sangeetha",
-        "disabled":false
-    },
-    {
-        "value": 10,
-        "label": "Shenbagavalli",
-        "disabled":false
-    },
-    {
-        "value": 11,
-        "label": "Kani",
-        "disabled":false
-    },
-    {
-        "value": 12,
         "label": "Manjula",
         "disabled":false
     },
     {
-        "value": 13,
+        "value": 8,
+        "label": "Meena",
+        "disabled":false
+    },
+    {
+        "value": 9,
+        "label": "Naga Nadhini",
+        "disabled":false
+    },
+    {
+        "value": 10,
+        "label": "Sangeetha",
+        "disabled":false
+    },
+    {
+        "value": 11,
+        "label": "Shenbagavalli(ramalakshmi)",
+        "disabled":false
+    },
+    {
+        "value": 12,
         "label": "Sornalatha",
+        "disabled":false
+    },
+    {
+        "value": 13,
+        "label": "Subashini Rasika",
+        "disabled":false
+    },
+    {
+        "value": 14,
+        "label": "Chandra Shanmugaraj",
         "disabled":false
     },
     {
